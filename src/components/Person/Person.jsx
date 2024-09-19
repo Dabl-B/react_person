@@ -1,8 +1,9 @@
 export const Person = ({ person }) => {
-  const partnerDescription = (person.sex === 'f' && `${person.partnerName} is my husband`) ||
-    (person.sex !== 'f' && `${person.partnerName} is my wife`);
+  const personsPartner = person.sex === 'm' ? 'wife' : 'husband';
 
-   const partnerText = person.isMarried ? partnerDescription : 'I am not married';
+  const partnerText = person.isMarried
+    ? `My ${personsPartner} is ${person.partnerName}`
+    : 'I am not married';
 
   return (
     <section className="Person">
